@@ -1,0 +1,65 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    body {
+        background-color: #e0f7fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        color: #00796b;
+        margin-top: 40px;
+    }
+
+    #box {
+        width: 100px;
+        height: 100px;
+        background-color: #ff4081;
+        position: relative;
+        margin: 30px auto;
+        border-radius: 8px;
+    }
+
+    .video-container {
+        margin-top: 20px;
+    }
+</style>
+
+<div>
+    <h1>Coldplay - A Sky Full of Stars 🎶</h1>
+
+    <div id="box"></div>
+
+    <div class="video-container">
+        <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/VPRjCeoBqrI"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+<script>
+    // JavaScript animation for the box
+    let box = document.getElementById("box");
+    let position = 0;
+
+    function moveBox() {
+        if (position >= 300) {
+            position = 0;
+        } else {
+            position++;
+            box.style.left = position + "px";
+        }
+    }
+
+    setInterval(moveBox, 10);
+</script>
